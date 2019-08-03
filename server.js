@@ -1,12 +1,19 @@
 const express = require("express");
 const cors = require("cors");
 const connectDb = require("./config/connectDb");
+const passport = require("passport");
+
 require("dotenv").config();
 
 const app = express();
 
 app.use(express.json({ extended: false }));
 app.use(cors());
+
+require("./models/User");
+require("./models/Listing");
+
+require("./config/passport");
 
 connectDb();
 
