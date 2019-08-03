@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Components
 import PrivateRoute from "./components/auth/PrivateRoute";
-import HomePage from "./components/landing/HomePage";
+import HomePageContainer from "./components/landing/HomePageContainer";
 import LoginPage from "./components/auth/LoginPage";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <Router>
       <>
         <Switch>
-          <PrivateRoute exact path="/" component={HomePage} />
+          <PrivateRoute exact path="/" component={HomePageContainer} />
           <Route path="/login" component={LoginPage} />
         </Switch>
       </>

@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 
 const AuthStatusHeaderBar = () => {
   return (
-    <div className="bg-gray-100">
-      <p>You are not signed in.</p>
-      <Link to="/login">Login</Link>
+    <div className="flex justify-between bg-gray-100 p-3 text-gray-600">
+      <p className="">You are not signed in.</p>
+      <Link to="/login" className="font-medium">
+        Login/Register
+      </Link>
     </div>
   );
 };
