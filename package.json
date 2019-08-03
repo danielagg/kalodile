@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "nodemon ./server.js"
+    "start-server:dev": "nodemon ./server.js",
+    "start-client:dev": "npm start --prefix client-app",
+    "start:dev": "concurrently \"npm run start-server:dev\" \"npm run start-client:dev\""
   },
   "keywords": [],
   "author": "Daniel Agg",
@@ -24,6 +26,7 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "concurrently": "^4.1.1"
   }
 }
