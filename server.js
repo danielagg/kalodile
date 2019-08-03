@@ -1,8 +1,14 @@
 const express = require("express");
+const cors = require("cors");
+const connectDb = require("./config/connectDb");
+require("dotenv").config();
 
 const app = express();
 
 app.use(express.json({ extended: false }));
+app.use(cors());
+
+connectDb();
 
 const PORT = process.env.PORT || 5000;
 
@@ -16,4 +22,4 @@ if (process.env.NODE_ENV === "production") {
   );
 }
 
-app.listen(PORT, () => console.log(`The server has started on port ${PORT}`));
+app.listen(PORT, () => console.log(`The server has started on port ${PORT}.`));
