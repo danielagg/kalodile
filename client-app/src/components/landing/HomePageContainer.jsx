@@ -5,6 +5,7 @@ import AuthStatusHeaderBar from "../auth/AuthStatusHeaderBar";
 import SiteDescription from "./SiteDescription";
 import MainListingSearch from "./MainListingSearch";
 import HeroActionButtons from "./HeroActionButtons";
+import ListItemContainer from "../listings/ListItemContainer";
 
 const HomePageContainer = () => {
   return (
@@ -13,6 +14,7 @@ const HomePageContainer = () => {
       <SiteDescription />
       <MainListingSearch />
       <HeroActionButtons />
+      <ListItemContainer />
     </div>
   );
 };
