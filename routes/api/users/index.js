@@ -64,7 +64,7 @@ router.put("/", auth.required, function(req, res, next) {
 
 router.post("/login", function(req, res, next) {
   if (!req.body.email) {
-    return res.status(422).json({
+    return res.status(401).json({
       errors: {
         email: "You must provide your email address, in order to login."
       }
@@ -88,7 +88,7 @@ router.post("/login", function(req, res, next) {
       user.token = user.generateJWT();
       return res.json({ user: user.toAuthJSON() });
     } else {
-      return res.status(422).json(info);
+      return res.status(401).json(info);
     }
   })(req, res, next);
 });
